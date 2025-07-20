@@ -14,6 +14,11 @@ This walkthrough guides you through building a serverless receipt processing sys
 4. Click **Create bucket**  
 5. Inside the bucket, create a folder named `scanvault-incoming/` for organized uploads
 
+<img width="1447" height="789" alt="Screenshot 2025-07-20 at 8 59 39 PM" src="https://github.com/user-attachments/assets/981fd447-74c7-46f7-b9ab-8e71e7368904" />
+
+<img width="1448" height="787" alt="Screenshot 2025-07-20 at 9 02 07 PM" src="https://github.com/user-attachments/assets/98f2ff28-10f8-4581-9b39-2276c3324c7f" />
+
+
 ---
 
 ## 2️⃣ Configure DynamoDB Table (for storing extracted receipt data)
@@ -26,6 +31,13 @@ This walkthrough guides you through building a serverless receipt processing sys
 4. Set **Sort Key**: `date` (Type: String)  
 5. Click **Create**
 
+<img width="598" height="311" alt="Screenshot 2025-07-20 at 11 11 04 PM" src="https://github.com/user-attachments/assets/9a719e78-5488-43d2-9dd1-15e6a9aacd03" />
+
+
+<img width="1215" height="744" alt="Screenshot 2025-07-20 at 6 20 28 PM" src="https://github.com/user-attachments/assets/5939f3ed-86b0-470c-b056-8dbd5ca368b8" />
+
+<img width="1432" height="782" alt="Screenshot 2025-07-20 at 9 15 31 PM" src="https://github.com/user-attachments/assets/53a26f4f-2af9-4ca7-962d-d3c81ae10656" />
+
 ---
 
 ## 3️⃣ Set Up Amazon SES (for sending email alerts)
@@ -36,6 +48,11 @@ This walkthrough guides you through building a serverless receipt processing sys
 2. Under **Verified Identities**, verify your sender email address  
 3. If your SES account is in sandbox mode, verify recipient email addresses as well  
 4. Note the AWS region selected (e.g., **ap-south-1**) for Lambda configuration  
+
+<img width="1437" height="784" alt="Screenshot 2025-07-20 at 11 13 23 PM" src="https://github.com/user-attachments/assets/61a039ba-8014-48d1-afef-c29107fb8c56" />
+
+![Verified Identities](https://github.com/user-attachments/assets/76ebaf42-a746-4990-90f4-dcc705a7b2c0)
+
 
 ---
 
@@ -54,6 +71,11 @@ This walkthrough guides you through building a serverless receipt processing sys
 4. Name the role: `ScanVault-lambdaRole`  
 5. Create the role
 
+<img width="1005" height="517" alt="Screenshot 2025-07-20 at 11 15 40 PM" src="https://github.com/user-attachments/assets/6d7c894c-b550-4e29-a1fe-8a96dcf0dde3" />
+
+<img width="1434" height="780" alt="Screenshot 2025-07-20 at 9 17 45 PM" src="https://github.com/user-attachments/assets/02a3057e-ecc0-4260-a5b1-71d518aef117" />
+
+
 ---
 
 ## 5️⃣ Deploy the Lambda Function (core processing logic)
@@ -69,6 +91,13 @@ This walkthrough guides you through building a serverless receipt processing sys
 7. Click **Deploy**  
 8. Increase timeout to 2 minutes (default is 3 seconds) under **Configuration > General settings**
 
+<img width="796" height="426" alt="Screenshot 2025-07-20 at 11 19 00 PM" src="https://github.com/user-attachments/assets/9663eb6a-6179-4a75-b30e-c16a4610b192" />
+
+<img width="1437" height="791" alt="Screenshot 2025-07-20 at 9 17 13 PM" src="https://github.com/user-attachments/assets/3f3d1966-c9ee-4a27-ac65-affa574e8c6d" />
+
+![Lambda Env ](https://github.com/user-attachments/assets/c9a0a02e-5da4-44e8-a004-2b7f761725b2)
+
+
 ---
 
 ## 6️⃣ Configure S3 Event Trigger for Lambda
@@ -83,6 +112,10 @@ This walkthrough guides you through building a serverless receipt processing sys
 6. Set destination as your Lambda function `processingLambda`  
 7. Save the notification
 
+<img width="1430" height="786" alt="Screenshot 2025-07-20 at 11 21 24 PM" src="https://github.com/user-attachments/assets/64bfc42b-728d-48c4-bc48-db01f5c97e08" />
+
+<img width="1435" height="719" alt="Screenshot 2025-07-20 at 11 22 32 PM" src="https://github.com/user-attachments/assets/02f700f3-4435-41c0-9521-e8403afeb9ce" />
+
 ---
 
 ## 7️⃣ Upload a Sample Receipt to Test the Pipeline
@@ -93,6 +126,8 @@ This walkthrough guides you through building a serverless receipt processing sys
 2. Click **Upload** and select a receipt image or PDF file  
 3. Confirm upload  
 4. The Lambda function will automatically process the file, extract data with Textract, save to DynamoDB, and send a notification email via SES
+
+<img width="1452" height="779" alt="Screenshot 2025-07-20 at 11 23 58 PM" src="https://github.com/user-attachments/assets/90eb57c6-e49a-4c0c-97e1-f48466ac0fcc" />
 
 ---
 
@@ -116,6 +151,12 @@ Ensure your Lambda function code handles:
 
 (Refer to your repo or provided scripts for full code)
 
+<img width="1437" height="791" alt="Screenshot 2025-07-20 at 9 17 13 PM" src="https://github.com/user-attachments/assets/22fe7734-5aea-4e61-a812-22257f4e386c" />
+
+<img width="1435" height="784" alt="Screenshot 2025-07-20 at 9 14 39 PM" src="https://github.com/user-attachments/assets/782abd77-21cb-46e8-853a-91475b79399d" />
+
+<img width="1450" height="784" alt="Screenshot 2025-07-20 at 9 15 10 PM" src="https://github.com/user-attachments/assets/9f9397d7-127a-45a0-a1b5-7baacd163dbc" />
+
 ---
 
 ## 📨 Expected Result
@@ -125,6 +166,8 @@ Once a receipt is uploaded:
 - You receive an email summary with key receipt data  
 - Extracted data is stored in DynamoDB for easy querying  
 - The system runs automatically with no manual intervention needed
+
+![Reciept mail](https://github.com/user-attachments/assets/fb265d60-59d6-4a11-b60a-ec05f58a4598)
 
 ---
 
