@@ -1,8 +1,8 @@
-# 🧾 ReceiptIQ – Smart, AI-Powered Receipt Parser
+# 🧾 ScanVault Project – Smart, AI-Powered Receipt Parser
 
-![ReceiptIQ Banner](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qh3mzoj03kojo1zbcqpd.png)
+![ScanVault Banner](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qh3mzoj03kojo1zbcqpd.png)
 
-**ReceiptIQ** is a fully serverless, cloud-native application built to automate receipt processing using AWS AI services. It transforms uploaded receipts into clean, structured, and actionable data—making reimbursement and record-keeping seamless, fast, and reliable.
+**ScanVault** is a fully serverless, cloud-native application built to automate receipt processing using AWS services and AI. It transforms uploaded receipts into clean, structured, and actionable data—making reimbursement and record-keeping seamless, fast, and reliable.
 
 > 📌 Intelligent automation for receipts, invoices, certificates, and more.
 
@@ -17,7 +17,7 @@ Manual receipt handling leads to:
 - Manual data entry errors  
 - No centralized searchable record
 
-**ReceiptIQ** eliminates these issues with AI-based document understanding and event-driven automation.
+**ScanVault** eliminates these issues with AI-based document understanding and event-driven automation.
 
 ---
 
@@ -78,7 +78,7 @@ Manual receipt handling leads to:
 
 ## 🤝 Contributing
 
-Open to feature suggestions, pull requests, or forks. Want to extend ReceiptIQ into a SaaS tool or add frontend support? Let’s build together!
+Open to feature suggestions, pull requests, or forks. Want to extend ScanVault into a SaaS tool or add frontend support? Let’s build together!
 
 ---
 
