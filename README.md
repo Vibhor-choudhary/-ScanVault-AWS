@@ -85,4 +85,4 @@ Open to feature suggestions, pull requests, or forks. Want to extend ScanVault i
 ## 📬 Contact
 
 Built with ❤️ by [Vibhor Choudhary](https://www.linkedin.com/in/vibhor-choudhary/)  
-GitHub Repository: [ScanVault Project on GitHub]([https://github.com/Vibhor-choudhary/ReceiptIQ.git](https://github.com/Vibhor-choudhary/-ScanVault-AWS.git))
+GitHub Repository: [ScanVault Project on GitHub](https://github.com/Vibhor-choudhary/-ScanVault-AWS.git)
